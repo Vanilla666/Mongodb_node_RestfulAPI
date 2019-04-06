@@ -3,10 +3,10 @@ var express = require('express'), //基本
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
     Task = require('./api/models/todoListModel'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'); //解析附加參數
 
 mongoose.Promise = global.Promise; //用mongoose 做連線到mongodb
-mongoose.connect('mongodb://localhost/Tododb');
+mongoose.connect('mongodb://localhost/Tododb'); //連到 mongodb
 
 
 app.use(bodyParser.urlencoded({ extended: true }));//解析uri
