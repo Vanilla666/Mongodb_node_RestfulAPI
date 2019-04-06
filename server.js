@@ -17,8 +17,8 @@ var routes = require('./api/routes/todoListRoutes'); // routes 導向到/api/rou
 routes(app); //把服務導向到api/routes/todoListRoutes 
 
 
-app.use(function (req, res) {
-    res.status(404).send({ url: req.originalUrl + ' not found' })
+app.use(function (req, res) { //如果都沒有找到符合的URL
+    res.status(404).send({ url: req.originalUrl + ' not found' }) // 就跳出 URL + ' not found'
 });
 app.listen(port);
 

@@ -2,7 +2,7 @@
 
 
 var mongoose = require('mongoose'), //用 mongoose 管理mongodb
-    Task = mongoose.model('Tasks');
+    Task = mongoose.model('Tasks'); //引用 Tasks model (表) model 只要用 mongoose.model() 將 model 讀出來，便可以對他進行操作了
 
 exports.list_all_tasks = function (req, res) { //查詢所有任務
     Task.find({}, function (err, task) {
